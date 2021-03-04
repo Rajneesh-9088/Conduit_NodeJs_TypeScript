@@ -1,0 +1,19 @@
+{
+  "name": "conduit_nodejs_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajneesh-9088/Conduit_NodeJs_TypeScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajneesh-9088/Conduit_NodeJs_TypeScript/issues"
+  },
+  "homepage": "https://github.com/Rajneesh-9088/Conduit_NodeJs_TypeScript#readme"
+}
