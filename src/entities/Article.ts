@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { StringLiteralLike } from "typescript";
+import { User } from "./User";
 
 @Entity()
 
@@ -22,6 +23,11 @@ export class Article {
 
     @UpdateDateColumn()
     updatedAt: Date
+    
+    @ManyToOne( ()=> User)
+  
+    author: User
+
       /*   
     "tagList": ["dragons", "training"], // TODO: relationship with tags
     "favorited": false,         // TODO: relationship with user

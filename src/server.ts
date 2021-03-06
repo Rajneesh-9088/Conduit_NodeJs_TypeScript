@@ -1,6 +1,7 @@
 import   express from 'express';
 import {createConnection} from "typeorm";
 import { Article } from './entities/Article';
+import { User } from './entities/User';
 
 const app = express()
 
@@ -14,7 +15,8 @@ async function start() {
         username: 'clone',
         password: 'clone',
         database: 'clone',
-        entities: [Article],
+        entities: [Article,User],
+        dropSchema: true, // TODO: not for production
         synchronize: true,
         logging: true,
         logger: "advanced-console"
