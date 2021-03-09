@@ -12,7 +12,7 @@ route.post('/', async(req,res) =>{
     } catch (e) {
         console.log(e)
         return res.status(422).json({
-            errors: {body: ['Could not create user']}
+            errors: {body: ['Could not create user', e.message]}
             
         })
     }
