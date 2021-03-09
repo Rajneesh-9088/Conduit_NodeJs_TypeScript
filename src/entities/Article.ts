@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn,
 import { StringLiteralLike } from "typescript";
 import { User } from "./User";
 
-@Entity()
+@Entity('articles')
 
 export class Article {
    
