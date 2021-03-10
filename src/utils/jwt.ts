@@ -1,5 +1,5 @@
 
-import jwt from 'jsonwebtoken'
+import jwt, { VerifyCallback, VerifyErrors } from 'jsonwebtoken'
 import{User} from "../entities/User"
 
 //TODO: move to config file
@@ -18,13 +18,14 @@ export async function sign(user: User): Promise<string> {
    })
 }
 
-// for testing
-
-async function run() {
-    const token = await sign({email:'raj@gmail.com', username:'raj'})
-    console.log("===============================================================================")
-    console.log("token",token)
-    console.log("---------------------------------------------------------------------------------")
+export async function decode(token: string): Promise<User>{
+    return new Promise ((resolve,reject)=>{
+        jwt.verify(token, JWT_SECRET, (err:VerifyErrors | null,decoded:  object | undefined) =>{
+            if(err) return reject(err)
+            else return resolve(decoded as User)
+        })
+    })
 }
 
-run();
+
+

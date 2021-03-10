@@ -18,6 +18,8 @@ export class User {
 
     @Column({nullable: true})
     image?: string
+
+    token?: string
     
 
 }
