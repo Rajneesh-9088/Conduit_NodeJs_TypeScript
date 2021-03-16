@@ -2,6 +2,7 @@ import   express from 'express';
 import {createConnection} from "typeorm";
 import { Article } from './entities/Article';
 import { User } from './entities/User';
+import { articlesRoute } from './routes/articles';
 import { userRoute } from './routes/user';
 import { usersRoute } from './routes/users';
 
@@ -15,6 +16,7 @@ app.get('/', (req,res) => {
 
 app.use('/api/users', usersRoute)
 app.use('/api/user',userRoute)
+app.use('/api/articles',articlesRoute)
 
 async function start() {
     await createConnection({
@@ -23,7 +25,7 @@ async function start() {
         password: 'clone',
         database: 'clone',
         entities: [Article,User],
-        dropSchema: true, // TODO: not for production
+        // dropSchema: true, // TODO: not for production
         synchronize: true,
         logging: true,
         logger: "advanced-console"

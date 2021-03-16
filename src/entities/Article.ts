@@ -28,6 +28,18 @@ export class Article {
   
     author: User
 
+    // constructor() {
+
+    // }
+
+    constructor(slug: string,title: string, description: string, body: string, author: User){
+      this.slug = slug;
+      this.title = title;
+      this.description = description;
+      this.body = body;
+      this.author = author;
+    }
+
       /*   
     "tagList": ["dragons", "training"], // TODO: relationship with tags
     "favorited": false,         // TODO: relationship with user
